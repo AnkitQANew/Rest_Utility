@@ -314,7 +314,7 @@ public class RestUtilities extends Setup
 	      		       }
                  }
 	        	  
-	        	  System.out.println("TC_006 has passed and response code is  ");
+	        	  System.out.println("TC_006 has passed and response code is   ");
 	        	  
 	        	  System.out.println("                                                            ");
 	        	 
