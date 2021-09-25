@@ -1,0 +1,21 @@
+##############################################################################################################################
+
+############### *****  This document contains workflow information of the utility *** #########################################
+
+About :: Here we are automating some user/employee/client management Rest APIs using Rest Assured.
+
+Prerequisite :: It requires minimum JAVA 11 on your machine
+
+Technology Used :: JAVA 11 and Rest Assured  3.3.0 
+
+Workflow ::-  
+
+1:- Inside "com.org.Base", some classes are created where some utilities are being created Eg. to create new data 
+    using POST like this we have utilities for GET,PUT and DELETE.
+    
+2:- Inside "com.org.Tests" some classes are created and here we are writing the Test Cases and using "@Test" from 
+    testNG to make them run.
+    
+3:- Inside "config.properties" we are managing all the test data that is being used throughout the execution.
+
+        
