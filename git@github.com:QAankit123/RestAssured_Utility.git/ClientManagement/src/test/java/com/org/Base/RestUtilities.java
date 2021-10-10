@@ -271,6 +271,45 @@ public class RestUtilities extends Setup
 			}
 	         
 	         
+	         public String  User_Logout(String u_id) throws IOException {
+	         
+	        	 
+	        	 REQ_SPC=RestAssured.given();
+		    	  
+		    	 REQ_SPC.header("Content-type","application/json");
+		    	 
+		    	 String   logout_url   = objSetup.Read_File("Logout_User_Endpoint");
+		    	 
+		    	 String SpecificUser_logout =logout_url+u_id;
+		    	 
+		    	 API_RESP=REQ_SPC.post(SpecificUser_logout);
+		    	 
+		    	 
+		    	 int response_code=API_RESP.getStatusCode();
+		    	 
+		    	 String api_resp=Integer.toString(response_code);
+		    	 
+		    	 if(response_code==200)
+		    	 {
+		    		 
+		    		 System.out.println("User is deleted suscessfuly");
+		    	 }
+		    	 
+		    	 else
+		    		 
+		    	 {
+		    		 
+		    		 System.out.println("API is unable to delete the user");
+		    	 }	 
+		    	 
+		    	 return api_resp;
+
+			}
+	         
+	         
+	         
+	         
+	         
 	         
 	         
 	         public void  get_MultipleUser_Status(String[] data) throws IOException 
@@ -319,6 +358,10 @@ public class RestUtilities extends Setup
 	        	  System.out.println("                                                            ");
 	        	 
 			 }
+	         
+	         
+	        
+	         
 	         
 	         
 	}

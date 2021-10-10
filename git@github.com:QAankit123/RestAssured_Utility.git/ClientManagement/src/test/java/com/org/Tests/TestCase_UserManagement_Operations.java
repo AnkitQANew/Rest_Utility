@@ -1,5 +1,8 @@
 package com.org.Tests;
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
@@ -9,8 +12,6 @@ import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.Status;
 import com.org.Base.RestUtilities;
 import com.org.Base.Setup;
-
-import junit.framework.Assert;
 
 public class TestCase_UserManagement_Operations extends RestUtilities
 {
@@ -45,6 +46,7 @@ public class TestCase_UserManagement_Operations extends RestUtilities
 		
 		
 		//objsoftassert.assertEquals(API_StatusCode, 201);
+		//AssertJUnit.assertEquals(201, API_StatusCode);
 		Assert.assertEquals(201, API_StatusCode);
 		
 		System.out.println("TC_001 is passed and the response code is   "+API_StatusCode);
@@ -66,7 +68,8 @@ public class TestCase_UserManagement_Operations extends RestUtilities
 		
 		API_StatusCode=objRestUtilities.Get_Specific_User_Details(UserID);
 		
-		Assert.assertEquals(200, API_StatusCode);
+		//AssertJUnit.assertEquals(200, API_StatusCode);
+		Assert.assertEquals(201, API_StatusCode);
 		
 		System.out.println("TC_002 has passed and response code is  "+API_StatusCode);
 		
@@ -88,7 +91,8 @@ public class TestCase_UserManagement_Operations extends RestUtilities
 		
 		API_StatusCode=objRestUtilities.Updaet_User_Details(exixting_user,FirstName,MiddleName,LastName,Date_of_Birth);
 		
-		Assert.assertEquals(200, API_StatusCode);
+		//AssertJUnit.assertEquals(200, API_StatusCode);
+		Assert.assertEquals(201, API_StatusCode);
 		
 		System.out.println("TC_003 has passed and response code is  "+API_StatusCode);
 		
@@ -104,14 +108,15 @@ public class TestCase_UserManagement_Operations extends RestUtilities
 	    	
 	    	API_StatusCode=objRestUtilities.Delete_User(exixting_userID);
 	    	
-	    	Assert.assertEquals(200, API_StatusCode);
+	    	//AssertJUnit.assertEquals(200, API_StatusCode);
+	    	Assert.assertEquals(201, API_StatusCode);
 	    	
 	    	
 	    	System.out.println("TC_004 has passed and response code is  "+API_StatusCode);
 
 	    	System.out.println("                                                            ");
 	    }
-	    
+	     
 	    
 	    
 ////////////////////TC 005 -- Creating a new user and taking the request body from the JSON file ///////////////////////////////
@@ -123,6 +128,8 @@ public class TestCase_UserManagement_Operations extends RestUtilities
 	        	 
 	         API_StatusCode= objRestUtilities.User_Creation_through_JSON();
              
+	         AssertJUnit.assertEquals(201, API_StatusCode);
+	         
 	         Assert.assertEquals(201, API_StatusCode);
 		    	
 		    	
